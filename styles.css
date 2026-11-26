@@ -10,9 +10,9 @@
 @media(max-width:650px){.hero{min-height:650px;display:block;padding-top:58px;padding-bottom:72px}.hero-copy{position:relative;width:100%;max-width:100%;z-index:2}.hero-art{width:auto;min-height:0;margin:0}.art-caption{right:7%;bottom:5%;font-size:8px}.hero-note{margin-top:28px}}
 
 /* Keep the Flatirons artwork unmistakably visible at every screen size. */
-.hero-art{inset:0 0 0 40%;z-index:0;background:#b9d0d3}
+.hero-art{inset:0 0 0 40%;align-self:stretch;height:100%;z-index:0;background:#b9d0d3}
 .hero-art::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--paper) 0%,rgba(247,245,239,.94) 13%,rgba(247,245,239,.55) 34%,rgba(247,245,239,0) 68%)}
-.flatirons-art{object-position:58% center}
+.flatirons-art{object-position:right 28%}
 .hero-copy{z-index:1}
 .hero-bottom{z-index:2}
 @media(max-width:650px){
@@ -35,4 +35,200 @@
 
 .site-footer .brand-logo {
   width: 168px;
+}
+
+.patient-reviews {
+  background: var(--cream);
+}
+
+.patient-reviews h2 {
+  font-size: clamp(40px, 4.3vw, 58px);
+  margin-bottom: 32px;
+}
+
+.review-columns {
+  --review-gap: clamp(16px, 2.5vw, 28px);
+  column-count: 2;
+  column-gap: var(--review-gap);
+  max-width: 1040px;
+}
+
+.patient-review {
+  break-inside: avoid;
+  margin: 0 0 var(--review-gap);
+  padding: clamp(20px, 3vw, 32px);
+  background: var(--paper);
+  border: 1px solid #183b3626;
+  border-radius: 8px;
+}
+
+.patient-review blockquote {
+  margin: 0;
+}
+
+.patient-review blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.patient-review figcaption {
+  margin-top: 16px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 650px) {
+  .review-columns {
+    column-count: 1;
+  }
+}
+
+.site-header nav {
+  gap: clamp(12px, 3vw, 40px);
+}
+
+.hero-actions .underlined {
+  margin-top: 0;
+}
+
+.hero .hero-slogan {
+  font-size: clamp(36px, 4.25vw, 64px);
+}
+
+@media (max-width: 650px) {
+  .hero .hero-slogan {
+    font-size: clamp(27px, 7.5vw, 42px);
+  }
+}
+
+.section-intro {
+  max-width: 62ch;
+  margin: 16px 0 32px;
+}
+
+.services .service-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 650px) {
+  .services .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.visit-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 650px) {
+  .visit-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.services .service-card {
+  min-height: 0;
+}
+
+.services .service-card h3,
+.visit-steps h3 {
+  font-size: 18px;
+}
+
+.services .service-card p,
+.about-copy > p:not(.eyebrow),
+.contact-heading > p {
+  font-size: 16px;
+}
+
+.treatment-list,
+.faq-list {
+  max-width: 72ch;
+  margin-top: 32px;
+}
+
+.treatment-list details,
+.faq-list details {
+  border-top: 1px solid currentColor;
+}
+
+.treatment-list summary,
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 0;
+}
+
+.faq-list a {
+  text-decoration: underline;
+}
+
+.first-visit,
+.faq {
+  background: var(--cream);
+}
+
+.first-visit h2,
+.faq h2 {
+  font-size: clamp(40px, 4.3vw, 58px);
+}
+
+.visit-steps {
+  gap: 24px;
+  padding-inline-start: 24px;
+}
+
+.visit-steps li {
+  padding-inline-start: 4px;
+}
+
+.visit-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 20px;
+  max-width: 850px;
+  margin: 36px auto 0;
+}
+
+.visit-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.about .about-visual {
+  width: min(100%, 240px);
+  justify-self: center;
+  margin: 0;
+  padding: 0;
+}
+
+.jeni-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.about-visual .visual-label {
+  text-align: center;
+}
+
+.draft-note {
+  color: #553608;
+  background: #fff0cb;
+  padding: 2px 6px;
+  font-weight: 600;
+}
+
+@media (max-width: 650px) {
+  .site-header nav {
+    gap: 0;
+  }
+
+  .about-visual {
+    order: 1;
+  }
 }
